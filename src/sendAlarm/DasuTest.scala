@@ -28,7 +28,7 @@ import org.eso.ias.prototype.input.java.IasValidity._
 
 
 
-class DasuOneASCETest extends FlatSpec with KafkaConsumerListener {
+class DasuTest extends FlatSpec with KafkaConsumerListener {
 	    private val logger = IASLogger.getLogger(this.getClass)
 
 			// Build the CDB reader
