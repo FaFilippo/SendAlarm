@@ -1,0 +1,7 @@
+{
+	"asceIDs":["ASCE-ID"],
+	"outputId":"ThresholdAlarm",
+	"logLevel":"FATAL",
+	"id":"DasuWithOneASCE",
+	"supervisorID":"SupervisorID"
+}

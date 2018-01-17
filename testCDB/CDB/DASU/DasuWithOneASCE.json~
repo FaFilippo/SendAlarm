@@ -1,0 +1,7 @@
+{
+	"asceIDs":["ASCE-ID"],
+	"outputId":"WS_WINDSPD",
+	"logLevel":"FATAL",
+	"id":"DasuWithOneASCE",
+	"supervisorID":"SupervisorID"
+}

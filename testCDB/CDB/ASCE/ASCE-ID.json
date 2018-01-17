@@ -1,0 +1,13 @@
+{
+	"dasuID":"DasuWithOneASCE",
+	"outputID":"ThresholdAlarm",
+	"props":[
+		{"name":"org.eso.ias.tf.minmaxthreshold.highOn","value":"-1"},
+		{"name":"org.eso.ias.tf.minmaxthreshold.highOff","value":"-2"},
+		{"name":"org.eso.ias.tf.minmaxthreshold.lowOn","value":"-4"},
+		{"name":"org.eso.ias.tf.minmaxthreshold.lowOff","value":"-3"}
+	],
+	"id":"ASCE-ID",
+	"transferFunctionID":"org.eso.ias.prototype.transfer.impls.MinMaxThresholdTF",
+	"inputIDs":["WS_WINDSPD"]
+}

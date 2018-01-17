@@ -1,0 +1,6 @@
+{
+	"logLevel":"INFO",
+	"id":"SupervisorID",
+	"hostName":"localhost",
+	"dasusIDs":["DasuWithOneASCE"]
+}
