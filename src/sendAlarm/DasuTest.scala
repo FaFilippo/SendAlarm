@@ -41,7 +41,7 @@ class DasuTest extends FlatSpec with KafkaConsumerListener {
 			val outputPublisher = KafkaPublisher(dasuId, new Properties())
 
 			val inputsProvider = new KafkaSubscriber(dasuId, new Properties())
-	    
+
 			// The DASU
 			val dasu = new Dasu(dasuId,outputPublisher,inputsProvider,cdbReader)
 
@@ -53,15 +53,15 @@ class DasuTest extends FlatSpec with KafkaConsumerListener {
 			val converterId = new Identifier("ConverterID",IdentifierType.CONVERTER,pluginId)
 			// The ID of the monitor point in unput (it matched the ID in theJSON file)
 			val inputID = new Identifier("WS_WINDPSD", IdentifierType.IASIO,converterId)
-	    
-	    
+
+
 			/** The publisher to send IASValues to kafka topic */
 			/*val eventsListener = new SimpleStringConsumer(
 					KafkaHelper.DEFAULT_BOOTSTRAP_BROKERS,
 					KafkaHelper.IASIOs_TOPIC_NAME,
 					"DasuWithKafka-TestSub",
 					this)
-	
+
 			logger.debug("initializing the event listener")
 			val props = new Properties()
 			props.setProperty("group.id", "DasuTest-groupID")
@@ -71,19 +71,19 @@ class DasuTest extends FlatSpec with KafkaConsumerListener {
 	    /*
 	     * String Server, Destination topic, Suorce Topic
 	     */
-	    
-			val stringPublisher = new SimpleStringProducer(
-					KafkaHelper.DEFAULT_BOOTSTRAP_BROKERS,
-					"KafkaDasuTestID-Producer",
-					KafkaHelper.IASIOs_TOPIC_NAME)
-	
+
+			 val stringPublisher = new SimpleStringProducer(
+ 					KafkaHelper.DEFAULT_BOOTSTRAP_BROKERS,
+ 					KafkaHelper.IASIOs_TOPIC_NAME,
+ 					KafkaHelper.IASIOs_TOPIC_NAME)
+
 			logger.debug("initializing the IASIO publisher")
-			
+
 			stringPublisher.setUp()
 
 			val jsonSerializer = new IasValueJsonSerializer()
 
-			/** The list with the events received */ 
+			/** The list with the events received */
 			val iasValuesReceived: ListBuffer[IASValue[_]] = ListBuffer()
 
 			logger.info("Giving kakfka stuff time to be ready...")
@@ -125,13 +125,13 @@ class DasuTest extends FlatSpec with KafkaConsumerListener {
 				// - the one we sent
 				// the one produced by the DASU!
 				assert(iasValuesReceived.size==0)
-				
+
 
 				logger.info("Cleaning up the event listener")
 				//eventsListener.tearDown()
 				logger.info("Cleaning up the IASIO publisher")
 				//stringPublisher.tearDown()
 				logger.info("Done")
-			} 
+			}
 
 }
